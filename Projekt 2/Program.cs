@@ -4,7 +4,7 @@
 string name = StarterMenu.nameP();
 
 
-Weapons axe = new Axe();
-axe.UseAbility();
-
+Player player = new Player(name,100);
+Abilities axeThrow = new AxeThrow();
+axeThrow.Action(player);
 Console.ReadLine();

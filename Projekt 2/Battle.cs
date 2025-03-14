@@ -1,7 +1,8 @@
-public static class Battle
+public class Battle
 {
 
-    
+
+
 
 
 

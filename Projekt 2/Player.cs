@@ -1,10 +1,14 @@
 public class Player
 {   
-    public int Hp = 100;
-    public int Sv;
+    public string Name { get; set; }
+    public int HitPoints { get; set; }
 
 
 
-
+    public Player(string name, int hitPoints)
+    {
+        Name = name;
+        HitPoints = hitPoints;
+    }
 
 }

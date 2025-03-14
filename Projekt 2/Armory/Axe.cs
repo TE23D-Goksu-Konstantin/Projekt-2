@@ -2,10 +2,10 @@ public class Axe : Weapons
 {
 
     
-    public Axe() : base("AXE", 50, 80, 10) { }
+    public Axe() : base("Axe", 50, 80, 10) { }
 
-    public override void UseAbility()
+    public override void Action(Player target)
     {
-        Console.WriteLine("dEALT DAMAGE");
+        Console.WriteLine("dEALT DAMAGE to " + target.HitPoints);
     }
 }

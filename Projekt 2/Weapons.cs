@@ -1,4 +1,4 @@
-public abstract class Weapons : Item
+public class Weapons : Item
 {
 
     public string Name { get; set; }
@@ -14,7 +14,6 @@ public abstract class Weapons : Item
         HitChance = hitchance;
         WeightW = weightw;
     }
-    public abstract void UseAbility();
 }
 
 
