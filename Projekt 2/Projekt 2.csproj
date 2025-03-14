@@ -7,4 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Abilites\" />
+    <Folder Include="Armory\" />
+  </ItemGroup>
+
 </Project>

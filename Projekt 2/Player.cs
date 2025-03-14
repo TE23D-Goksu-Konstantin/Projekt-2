@@ -1,7 +1,9 @@
 public class Player
 {   
-    public int Hp;
+    public int Hp = 100;
     public int Sv;
+
+
 
 
 

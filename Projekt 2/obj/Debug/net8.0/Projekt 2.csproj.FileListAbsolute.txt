@@ -12,3 +12,4 @@ C:\Users\konstantin.goksu\Documents\Programmering 1\Projekt 2\Projekt 2\obj\Debu
 C:\Users\konstantin.goksu\Documents\Programmering 1\Projekt 2\Projekt 2\obj\Debug\net8.0\Projekt 2.pdb
 C:\Users\konstantin.goksu\Documents\Programmering 1\Projekt 2\Projekt 2\obj\Debug\net8.0\Projekt 2.genruntimeconfig.cache
 C:\Users\konstantin.goksu\Documents\Programmering 1\Projekt 2\Projekt 2\obj\Debug\net8.0\ref\Projekt 2.dll
+C:\Users\konstantin.goksu\Documents\Programmering 1\Projekt 2\Projekt 2\obj\Debug\net8.0\Projekt 2.sourcelink.json
