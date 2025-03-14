@@ -1,9 +1,14 @@
 public class Item
 {
 
-    public virtual void Action(Player target)
+    public virtual void FriendlyAction(Player target)
     {
         
     }
-    
+
+        public virtual void HostileAction(EnemyPlayer target)
+    {
+        
+    }
+
 }

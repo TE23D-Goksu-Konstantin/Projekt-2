@@ -1,9 +1,9 @@
 public class AxeThrow : Abilities
 {
-    public void Action(Player target)
+    public void HostileAction(EnemyPlayer target)
     {
-        target.HitPoints -= 30;
-        Console.WriteLine($"Threw axe and he now has " + target.HitPoints + " HP left");
+        target.EnemyHitPoints -= 30;
+        Console.WriteLine($"Threw axe and he now has " + target.EnemyHitPoints + " HP left");
     }
 }
 

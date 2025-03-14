@@ -1,7 +1,7 @@
 public interface Abilities
 {
 
-    void Action(Player target);
+    void HostileAction(EnemyPlayer target);
 }
 
 

@@ -4,7 +4,7 @@
 string name = StarterMenu.nameP();
 
 
-Player player = new Player(name,100);
+EnemyPlayer enemyPlayer = new EnemyPlayer("ee",100);
 Abilities axeThrow = new AxeThrow();
-axeThrow.Action(player);
+axeThrow.HostileAction(enemyPlayer);
 Console.ReadLine();
