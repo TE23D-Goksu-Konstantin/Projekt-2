@@ -1,6 +1,6 @@
-public static class StarterMenu
+public class StarterMenu
 {
-    public static string nameP()
+    public static string PName()
     {
         while (true)
         {
@@ -22,7 +22,7 @@ public static class StarterMenu
 
 
 
-    public static string eNamePicker()
+    public static string ENamePicker()
     {
         List<string> eNames = new List<string> {
     "Venom ReaperJacob",
