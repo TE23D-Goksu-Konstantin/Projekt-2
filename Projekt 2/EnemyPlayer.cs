@@ -1,5 +1,6 @@
 public class EnemyPlayer
 {
+    public static EnemyPlayer Instance {get; private set;}
     public string EnemyName { get; set; }
     public int EnemyHitPoints { get; set; }
 
@@ -9,6 +10,7 @@ public class EnemyPlayer
     {
         EnemyName = enemyName;
         EnemyHitPoints = enemyHitPoints;
+        Instance = this;
     }
 
 }

@@ -1,5 +1,7 @@
 public class Player
 {   
+
+    public static Player Instance {get; private set;}
     public string Name { get; set; }
     public int HitPoints { get; set; }
 
@@ -9,6 +11,7 @@ public class Player
     {
         Name = name;
         HitPoints = hitPoints;
+        Instance = this;
     }
 
 }
