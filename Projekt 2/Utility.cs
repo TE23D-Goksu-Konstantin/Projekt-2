@@ -1,4 +1,4 @@
-public static class Utility
+public static class Utility                    //COPIED
 {
 
     public static bool Proceed(bool check)
@@ -11,7 +11,7 @@ public static class Utility
             Utility.writing(consoleOutput);
 
 
-            string checkC = Console.ReadLine();
+            string checkC = Console.ReadLine();      
             if (checkC.ToLower() == "y")
             {
                 return true;
@@ -36,7 +36,7 @@ public static class Utility
         for (int i = 0; i < text.Length; i++)
         {
             Console.Write(text[i]);              //prints each word in the string singularily
-            Thread.Sleep(30);
+            Thread.Sleep(15);                   
         }
         Console.WriteLine();
     }
