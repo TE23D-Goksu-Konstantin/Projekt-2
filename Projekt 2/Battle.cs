@@ -1,8 +1,11 @@
-using System.Runtime.Serialization;
-
 public class Battle
 {
     public int turnCounter = 0;
+    static public List<string> weaponsList = new List<string>
+    {
+        nameof(Axe)
+    };
+
     
     static string PName = StarterMenu.PName();
     static string EnemyName = StarterMenu.ENamePicker();
@@ -12,12 +15,14 @@ public class Battle
     Abilities axeThrow = new AxeThrow();
 
 
+
     public void StartBattle()
-    {
+    {       
+        weaponsList.Add("Axe");
+
         while(player.HitPoints > 0 || enemyPlayer.EnemyHitPoints > 0) 
         {
             Console.Clear();
-
 
             int maxHP = 100;
             int hpBarsEnemy = (10*enemyPlayer.EnemyHitPoints)/maxHP;            //calculates remaining health bar(s)
@@ -39,14 +44,22 @@ public class Battle
             {
                 
             }
-            else if(battleChoice.ToLower() == "Atk")
+            else if(battleChoice.ToLower() == "atk")
             {
-                BattleAttacks();
+                System.Console.WriteLine("hejasig");
+                Console.ReadLine();
+                bool battleAction = BattleAttacks();
+                if(battleAction == false)
+                {
+                    turnCounter++;
+                }
             }
-            else if(battleChoice.ToLower() == "Inv")
+            else if(battleChoice.ToLower() == "inv")
             {
-                BattleInventory();
-                turnCounter++;
+                if(BattleInventory() == true)
+                {
+                    turnCounter++;
+                }
             }
             else if(battleChoice.ToLower() == "EAtk")
             {
@@ -71,15 +84,24 @@ public class Battle
 
 
 
-    public void BattleAttacks()
+    public static bool BattleAttacks()
     {
-        
+        Console.WriteLine(weaponsList[0]);
+        string e = Console.ReadLine();
+        if(e == "e")
+        {
+        return true;
+        } else {
+           return false; 
+        }
+
     }
 
 
 
-    public void BattleInventory()
+    public bool BattleInventory()
     {
-
+        Console.WriteLine("");
+        return false;
     }
 }
