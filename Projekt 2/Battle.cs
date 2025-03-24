@@ -9,6 +9,11 @@ public class Battle
         // nameof()
     };
 
+    static public List<string> weaponsAttacksList = new List<string>
+    {
+        nameof(AxeThrow),
+        // nameof()
+    };
     
     static string PName = StarterMenu.PName();
     static string EnemyName = StarterMenu.ENamePicker();
@@ -21,8 +26,6 @@ public class Battle
 
     public void StartBattle()
     {       
-        weaponsList.Add("Axe");
-        weaponsList.Add("Tree");
 
         while(player.HitPoints > 0 && enemyPlayer.EnemyHitPoints > 0) 
         {
@@ -44,6 +47,7 @@ public class Battle
             Utility.writing(consoleOutput);
 
             string battleChoice = Console.ReadLine().Trim().ToLower();
+            Console.Clear();
             if(battleChoice.ToLower() == "atk")
             {
                 bool battleAction = BattleAttacks();
@@ -79,22 +83,44 @@ public class Battle
             }
 
 
-            axeThrow.HostileAction(enemyPlayer);
+
             Console.ReadLine();
         } 
     }
 
 
 
-    public static bool BattleAttacks()
+    public bool BattleAttacks()
     {
         int i = 0;
             foreach(string e in weaponsList)
             {
             Console.WriteLine(i+1 + ": " +  e);
             }
+        Console.WriteLine("Choose your weapon");
+
+        string weaponChoice = Console.ReadLine();
+        string battleChoice = Console.ReadLine();
+        int.TryParse(battleChoice, out int attackChoice);
         Console.WriteLine("Choose your attack");
-        Console.ReadLine();
+        Console.Clear();
+
+            foreach(string e in weaponsAttacksList)
+            {
+            Console.WriteLine(i+1 + ": " +  e);
+            }
+
+        if(attackChoice == 1)
+        {
+            axeThrow.HostileAction(enemyPlayer);
+        }
+        else if(attackChoice == 2)
+        {
+
+        }
+
+
+        Console.WriteLine("");
         return true;
     }
 
