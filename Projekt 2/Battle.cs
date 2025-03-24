@@ -1,9 +1,12 @@
+using System.Security.Cryptography.X509Certificates;
+
 public class Battle
 {
     public int turnCounter = 0;
     static public List<string> weaponsList = new List<string>
     {
-        nameof(Axe)
+        nameof(Axe),
+        // nameof()
     };
 
     
@@ -19,8 +22,9 @@ public class Battle
     public void StartBattle()
     {       
         weaponsList.Add("Axe");
+        weaponsList.Add("Tree");
 
-        while(player.HitPoints > 0 || enemyPlayer.EnemyHitPoints > 0) 
+        while(player.HitPoints > 0 && enemyPlayer.EnemyHitPoints > 0) 
         {
             Console.Clear();
 
@@ -39,15 +43,9 @@ public class Battle
             + "\nWrite 'EAtk' to attempt to view your enemies attacks" + "\nWrite 'EInv' to attempt to view your enemies inventory" + "\n------------------------";
             Utility.writing(consoleOutput);
 
-            string battleChoice = Console.ReadLine();
-            if(turnCounter % 2 == 0)    //checks if the number is even which means it's the enemies turn
+            string battleChoice = Console.ReadLine().Trim().ToLower();
+            if(battleChoice.ToLower() == "atk")
             {
-                
-            }
-            else if(battleChoice.ToLower() == "atk")
-            {
-                System.Console.WriteLine("hejasig");
-                Console.ReadLine();
                 bool battleAction = BattleAttacks();
                 if(battleAction == false)
                 {
@@ -69,6 +67,10 @@ public class Battle
             {
 
             }
+            else if(turnCounter % 2 == 0)    //checks if the number is even which means it's the enemies turn  //COPIED
+            {
+                
+            }
             else
             {
             consoleOutput = "Error";
@@ -86,15 +88,14 @@ public class Battle
 
     public static bool BattleAttacks()
     {
-        Console.WriteLine(weaponsList[0]);
-        string e = Console.ReadLine();
-        if(e == "e")
-        {
+        int i = 0;
+            foreach(string e in weaponsList)
+            {
+            Console.WriteLine(i+1 + ": " +  e);
+            }
+        Console.WriteLine("Choose your attack");
+        Console.ReadLine();
         return true;
-        } else {
-           return false; 
-        }
-
     }
 
 
