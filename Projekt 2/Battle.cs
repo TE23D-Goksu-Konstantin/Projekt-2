@@ -3,17 +3,17 @@ using System.Security.Cryptography.X509Certificates;
 public class Battle
 {
     public int turnCounter = 0;
-    static public List<string> weaponsList = new List<string>
-    {
-        nameof(Axe),
-        // nameof()
-    };
+    // static public List<string> weaponsList = new List<string>
+    // {
+    //     nameof(Axe),
+    //     // nameof()
+    // };
 
-    static public List<string> weaponsAttacksList = new List<string>
-    {
-        nameof(AxeThrow),
-        // nameof()
-    };
+    // static public List<string> weaponsAttacksList = new List<string>
+    // {
+    //     nameof(AxeThrow),
+    //     // nameof()
+    // };
     
     static string PName = StarterMenu.PName();
     static string EnemyName = StarterMenu.ENamePicker();
@@ -26,7 +26,6 @@ public class Battle
 
     public void StartBattle()
     {       
-
         while(player.HitPoints > 0 && enemyPlayer.EnemyHitPoints > 0) 
         {
             Console.Clear();
@@ -50,7 +49,7 @@ public class Battle
             Console.Clear();
             if(battleChoice.ToLower() == "atk")
             {
-                bool battleAction = BattleAttacks();
+                bool battleAction = BattleWeaponPick();
                 if(battleAction == false)
                 {
                     turnCounter++;
@@ -90,25 +89,34 @@ public class Battle
 
 
 
-    public bool BattleAttacks()
+    public bool BattleWeaponPick()
     {
-        int i = 0;
-            foreach(string e in weaponsList)
-            {
-            Console.WriteLine(i+1 + ": " +  e);
-            }
-        Console.WriteLine("Choose your weapon");
 
-        string weaponChoice = Console.ReadLine();
+        BattleAbilityUse();
+        
+        // string battleChoice = Console.ReadLine();
+        // int.TryParse(battleChoice, out int weaponsChoice);
+
+        // if(weaponsChoice == 1)
+        // {
+        //     BattleAbilityUse();
+        // }
+        // else if(weaponsChoice == 2)
+        // {
+
+        // }
+        return true;
+    }
+
+    public void BattleAbilityUse()
+    {
+        Axe axe = new Axe();
+        axe.ListAbilities();
+        Console.WriteLine("Choose your attack");
         string battleChoice = Console.ReadLine();
         int.TryParse(battleChoice, out int attackChoice);
-        Console.WriteLine("Choose your attack");
-        Console.Clear();
 
-            foreach(string e in weaponsAttacksList)
-            {
-            Console.WriteLine(i+1 + ": " +  e);
-            }
+
 
         if(attackChoice == 1)
         {
@@ -118,13 +126,7 @@ public class Battle
         {
 
         }
-
-
-        Console.WriteLine("");
-        return true;
     }
-
-
 
     public bool BattleInventory()
     {

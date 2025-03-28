@@ -6,6 +6,20 @@ public class Weapons : Item
     public int HitChance { get; set; }
     public int WeightW { get; set; }
 
+    public List<Abilities> abilities = new();
+
+    public void ListAbilities()
+    {
+        if (abilities.Count == 0)
+        {
+            Console.Write("No abilities avalible");
+        }
+
+        foreach(Abilities ability in abilities)
+        {
+            Console.WriteLine(ability.name);
+        }
+    }
 
     protected Weapons(string name, int damage, int hitchance, int weightw)
     {

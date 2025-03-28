@@ -1,7 +1,8 @@
-public interface Abilities
+public abstract class Abilities
 {
+    public string name;
 
-    void HostileAction(EnemyPlayer target);
+    public abstract void HostileAction(EnemyPlayer target);
 }
 
 
