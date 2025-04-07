@@ -20,9 +20,11 @@ public class Battle
             int maxHP = 100;
             int hpBarsEnemy = (10*enemyPlayer.EnemyHitPoints)/maxHP;            //calculates remaining health bar(s)
             int hpBarsPlayer = (10*player.HitPoints)/maxHP;                      //COPIED
+            int lostHpBarsEnemy = 10 - hpBarsEnemy;
+            int lostHpBarsPlayer = 10 - hpBarsPlayer;
 
-            string hpBarP = new string('█',hpBarsPlayer);           //creates a class that will print out the hp-bars depending on the users health
-            string hpBarE = new string('█',hpBarsEnemy);            //COPIED
+            string hpBarP = new string('█',hpBarsPlayer) + new string('░', lostHpBarsPlayer);           //creates a class that will print out the hp-bars depending on the users health
+            string hpBarE = new string('█',hpBarsEnemy) + new string('░', lostHpBarsEnemy);            //COPIED
 
             string consoleOutput = PName + "\nHP: " + hpBarP + "\n------------------------"
             + "\nWrite 'Atk' to view your attacks" + "\nWrite 'Inv' to view your inventory" + "\n------------------------\n\n";
@@ -99,22 +101,17 @@ public class Battle
     public void BattleAbilityUse()
     {
         Axe axe = new Axe();
-        axe.ListAbilities();
-
         string consoleOutput = "Choose your attack:";
         Utility.writing(consoleOutput);
 
-
-        for(int i = 0; i<0;i++)
+        for(int i = 0; i < axe.abilities.Count; i++)
         {
             consoleOutput = $"{i+1}:  {axe.abilities[i].name}";
             Utility.writing(consoleOutput);
         }
         
         
-        
         string battleChoice = Console.ReadLine();
-
         if(int.TryParse(battleChoice, out int attackChoice))
             {
                 int realIndex = attackChoice - 1;
@@ -136,14 +133,6 @@ public class Battle
                 consoleOutput = "Error";
                 Utility.writing(consoleOutput);
             }
-
- 
-
-        if(attackChoice == 1 && axe.abilities.Contains(axeThrow))
-        {
-            axeThrow.HostileAction(enemyPlayer);
-        }
-
 
     }
 

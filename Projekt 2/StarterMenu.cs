@@ -26,7 +26,7 @@ public class StarterMenu
     public static string ENamePicker()                    //COPIED
     {
         List<string> eNames = new List<string> {
-    "Venom ReaperJacob",
+    "Venom Reaper Jacob",
     "Doom Fang",
     "Goonie Howler Anton",
     "Brainrot Brute Richard",
