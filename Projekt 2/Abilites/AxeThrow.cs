@@ -1,8 +1,11 @@
 public class AxeThrow : Abilities
 {
+    int ATK = 30;
+    int HIT = 70;
+
     public AxeThrow()
     {
-        name = "Axe Throw";
+        name = $"Axe Throw: ATK {ATK}, HIT {HIT}%";
     }
 
     public override void HostileAction(EnemyPlayer target)

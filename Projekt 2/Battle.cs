@@ -37,7 +37,7 @@ public class Battle
             if(battleChoice.ToLower() == "atk")
             {
                 bool battleAction = BattleWeaponPick();
-                if(battleAction == false)
+                if(battleAction == true)
                 {
                     turnCounter++;
                 }
@@ -48,6 +48,11 @@ public class Battle
                 {
                     turnCounter++;
                 }
+                
+                if(turnCounter % 2 == 0)    //checks if the number is even which means it's the enemies turn  //COPIED
+                {
+                    
+                }
             }
             else if(battleChoice.ToLower() == "EAtk")
             {
@@ -56,10 +61,6 @@ public class Battle
             else if(battleChoice.ToLower() == "EInv")
             {
 
-            }
-            else if(turnCounter % 2 == 0)    //checks if the number is even which means it's the enemies turn  //COPIED
-            {
-                
             }
             else
             {
