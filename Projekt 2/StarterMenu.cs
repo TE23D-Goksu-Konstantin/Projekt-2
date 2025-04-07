@@ -4,11 +4,12 @@ public class StarterMenu
     {
         while (true)
         {
-            Console.WriteLine("Enter your name:");
+            string consoleOutput = "Enter your name: ";
+            Utility.writing(consoleOutput);
             string name = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(name) || int.TryParse(name, out int t))
             {                                                                       
-                string consoleOutput = "Error";                                   //where the player gets to pick their name
+                consoleOutput = "Error";                                   //where the player gets to pick their name
                 Utility.writing(consoleOutput);
                 continue;
             }

@@ -1,19 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
-
 public class Battle
 {
     public int turnCounter = 0;
-    // static public List<string> weaponsList = new List<string>
-    // {
-    //     nameof(Axe),
-    //     // nameof()
-    // };
-
-    // static public List<string> weaponsAttacksList = new List<string>
-    // {
-    //     nameof(AxeThrow),
-    //     // nameof()
-    // };
     
     static string PName = StarterMenu.PName();
     static string EnemyName = StarterMenu.ENamePicker();
@@ -112,20 +99,51 @@ public class Battle
     {
         Axe axe = new Axe();
         axe.ListAbilities();
-        Console.WriteLine("Choose your attack");
+
+        string consoleOutput = "Choose your attack:";
+        Utility.writing(consoleOutput);
+
+
+        for(int i = 0; i<0;i++)
+        {
+            consoleOutput = $"{i+1}:  {axe.abilities[i].name}";
+            Utility.writing(consoleOutput);
+        }
+        
+        
+        
         string battleChoice = Console.ReadLine();
-        int.TryParse(battleChoice, out int attackChoice);
 
+        if(int.TryParse(battleChoice, out int attackChoice))
+            {
+                int realIndex = attackChoice - 1;
+                if(realIndex >= 0 && realIndex < axe.abilities.Count)
+                {
 
+                    Abilities chosenAbility = axe.abilities[realIndex];
+                    chosenAbility.HostileAction(enemyPlayer);
 
-        if(attackChoice == 1)
+                }
+                else
+                {
+                    consoleOutput = "Error";
+                    Utility.writing(consoleOutput);
+                }
+            }            
+            else
+            {
+                consoleOutput = "Error";
+                Utility.writing(consoleOutput);
+            }
+
+ 
+
+        if(attackChoice == 1 && axe.abilities.Contains(axeThrow))
         {
             axeThrow.HostileAction(enemyPlayer);
         }
-        else if(attackChoice == 2)
-        {
 
-        }
+
     }
 
     public bool BattleInventory()

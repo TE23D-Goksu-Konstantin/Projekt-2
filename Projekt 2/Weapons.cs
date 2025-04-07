@@ -17,7 +17,8 @@ public class Weapons : Item
 
         foreach(Abilities ability in abilities)
         {
-            Console.WriteLine(ability.name);
+            string consoleOutput = ability.name;
+            Utility.writing(consoleOutput);
         }
     }
 

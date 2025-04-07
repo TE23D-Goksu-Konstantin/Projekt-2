@@ -9,7 +9,7 @@ public class AxeThrow : Abilities
     {        
         double i = Random.Shared.Next(0,10);
 
-        if(i >= 8)
+        if(i <= 7)
         {
         target.EnemyHitPoints -= 30;
         string consoleOutput = Player.Instance.Name + " threw an axe at " + target.EnemyName + 
@@ -18,8 +18,8 @@ public class AxeThrow : Abilities
         }
         else
         {
-        string consoleOutput = Player.Instance.Name + " attempted to chop " + target.EnemyName + 
-        " but it failed";
+        string consoleOutput = Player.Instance.Name + " attempted to throw an axe towards " + target.EnemyName + 
+        " but it missed";
         Utility.writing(consoleOutput);
         }
     }
