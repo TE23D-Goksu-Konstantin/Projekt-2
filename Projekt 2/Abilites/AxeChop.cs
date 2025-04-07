@@ -14,11 +14,16 @@ public class AxeChop : Abilities
 
         if(i <= 3)
         {
-        target.EnemyHitPoints -= 70;
+        target.EnemyHitPoints -= ATK;
+        if(EnemyPlayer.Instance.EnemyHitPoints < 0)
+        {
+            EnemyPlayer.Instance.EnemyHitPoints = 0;
+        }
         string consoleOutput = Player.Instance.Name + " chopped " + target.EnemyName + 
         " and he now has " + target.EnemyHitPoints + " HP left";
         Utility.writing(consoleOutput);
-        }else
+        }
+        else
         {
         string consoleOutput = Player.Instance.Name + " attempted to chop " + target.EnemyName + 
         " but it failed";

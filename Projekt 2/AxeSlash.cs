@@ -14,6 +14,10 @@ public class AxeSlash : Abilities
         if(i <= 9)
         {
         target.EnemyHitPoints -= ATK;
+        if(EnemyPlayer.Instance.EnemyHitPoints < 0)
+        {
+            EnemyPlayer.Instance.EnemyHitPoints = 0;
+        }
         string consoleOutput = Player.Instance.Name + " slashed " + target.EnemyName + 
         " and he now has " + target.EnemyHitPoints + " HP left";
         Utility.writing(consoleOutput);

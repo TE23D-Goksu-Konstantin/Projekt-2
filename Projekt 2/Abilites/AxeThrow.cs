@@ -14,7 +14,11 @@ public class AxeThrow : Abilities
 
         if(i <= 7)
         {
-        target.EnemyHitPoints -= 30;
+        target.EnemyHitPoints -= ATK;
+                if(EnemyPlayer.Instance.EnemyHitPoints < 0)
+        {
+            EnemyPlayer.Instance.EnemyHitPoints = 0;
+        }
         string consoleOutput = Player.Instance.Name + " threw an axe at " + target.EnemyName + 
         " and he now has " + target.EnemyHitPoints + " HP left";
         Utility.writing(consoleOutput);

@@ -1,10 +1,11 @@
 public class Battle
 {
+
     public int turnCounter = 0;
     
     static string PName = StarterMenu.PName();
     static string EnemyName = StarterMenu.ENamePicker();
-    EnemyPlayer enemyPlayer = new EnemyPlayer(EnemyName,100);
+    EnemyPlayer enemyPlayer = new EnemyPlayer(EnemyName, 100);
     Player player = new Player(PName, 100);
 
     Abilities axeThrow = new AxeThrow();
@@ -12,9 +13,11 @@ public class Battle
 
 
     public void StartBattle()
-    {       
+    {    
+
         while(player.HitPoints > 0 && enemyPlayer.EnemyHitPoints > 0) 
         {
+
             Console.Clear();
 
             int maxHP = 100;
@@ -71,8 +74,6 @@ public class Battle
             continue;
             }
 
-
-
             Console.ReadLine();
         } 
     }
@@ -120,7 +121,19 @@ public class Battle
 
                     Abilities chosenAbility = axe.abilities[realIndex];
                     chosenAbility.HostileAction(enemyPlayer);
+                            if(enemyPlayer.EnemyHitPoints <= 0) //COPIED
+        {
+            enemyPlayer.EnemyHitPoints = 0;
 
+            bool statusCheck = HeartRateMonitor.StatusCheck(enemyPlayer.EnemyName, enemyPlayer.EnemyHitPoints);
+
+            if (statusCheck)
+            {
+                EnemyName = StarterMenu.ENamePicker();
+                return;
+            }
+
+        }
                 }
                 else
                 {
