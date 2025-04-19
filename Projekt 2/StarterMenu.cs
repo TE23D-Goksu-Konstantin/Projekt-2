@@ -25,7 +25,7 @@ public class StarterMenu
 
     public static string ENamePicker()                    //COPIED
     {
-        List<string> eNames = new List<string> {
+        List<string> eNames = new List<string> {  //Uses a list in order to make the enemy name system easier to utilize
     "Venom Reaper Jacob",
     "Doom Fang",
     "Goonie Howler Anton",
