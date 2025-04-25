@@ -84,18 +84,7 @@ public class Battle
     {
 
         BattleAbilityUse();
-        
-        // string battleChoice = Console.ReadLine();
-        // int.TryParse(battleChoice, out int weaponsChoice);
 
-        // if(weaponsChoice == 1)
-        // {
-        //     BattleAbilityUse();
-        // }
-        // else if(weaponsChoice == 2)
-        // {
-
-        // }
         return true;
     }
 
