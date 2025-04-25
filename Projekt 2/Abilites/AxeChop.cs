@@ -10,7 +10,7 @@ public class AxeChop : Abilities
 
     public override void HostileAction(EnemyPlayer target)
     {
-        int i = Random.Shared.Next(0,10);
+        int i = Random.Shared.Next(0,11);
 
         if(i <= 3)
         {
