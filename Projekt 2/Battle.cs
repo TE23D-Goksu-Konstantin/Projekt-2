@@ -15,14 +15,14 @@ public class Battle
     public void StartBattle()
     {    
 
-        while(player.HitPoints > 0 && enemyPlayer.EnemyHitPoints > 0) 
+        while(player.hitPoints > 0 && enemyPlayer.EnemyHitPoints > 0) 
         {
 
             Console.Clear();
 
             int maxHP = 100;
             int hpBarsEnemy = (10*enemyPlayer.EnemyHitPoints)/maxHP;            //calculates remaining health bar(s)
-            int hpBarsPlayer = (10*player.HitPoints)/maxHP;                      //COPIED
+            int hpBarsPlayer = (10*player.hitPoints)/maxHP;                      //COPIED
             int lostHpBarsEnemy = 10 - hpBarsEnemy;
             int lostHpBarsPlayer = 10 - hpBarsPlayer;
 
@@ -84,30 +84,18 @@ public class Battle
     {
 
         BattleAbilityUse();
-        
-        // string battleChoice = Console.ReadLine();
-        // int.TryParse(battleChoice, out int weaponsChoice);
-
-        // if(weaponsChoice == 1)
-        // {
-        //     BattleAbilityUse();
-        // }
-        // else if(weaponsChoice == 2)
-        // {
-
-        // }
         return true;
     }
 
     public void BattleAbilityUse()
     {
         Axe axe = new Axe();
-        string consoleOutput = "Choose your attack:";
+        string consoleOutput = "Choose your attack:";    
         Utility.writing(consoleOutput);
 
         for(int i = 0; i < axe.abilities.Count; i++)
         {
-            consoleOutput = $"{i+1}:  {axe.abilities[i].name}";
+            consoleOutput = $"{i+1}:  {axe.abilities[i].name}";        //Prints out all abilities bound to axe
             Utility.writing(consoleOutput);
         }
         
@@ -119,21 +107,21 @@ public class Battle
                 if(realIndex >= 0 && realIndex < axe.abilities.Count)
                 {
 
-                    Abilities chosenAbility = axe.abilities[realIndex];
+                    Abilities chosenAbility = axe.abilities[realIndex];     //Makes it so the user input is accurate to the ability chosen
                     chosenAbility.HostileAction(enemyPlayer);
-                            if(enemyPlayer.EnemyHitPoints <= 0) //COPIED
-        {
-            enemyPlayer.EnemyHitPoints = 0;
+                if(enemyPlayer.EnemyHitPoints <= 0) 
+                {
+                    enemyPlayer.EnemyHitPoints = 0;
 
-            bool statusCheck = HeartRateMonitor.StatusCheck(enemyPlayer.EnemyName, enemyPlayer.EnemyHitPoints);
+                    bool statusCheck = HeartRateMonitor.StatusCheck(enemyPlayer.EnemyName, enemyPlayer.EnemyHitPoints); //Checks if someone has died
 
-            if (statusCheck)
-            {
-                EnemyName = StarterMenu.ENamePicker();
-                return;
-            }
+                    if (statusCheck)
+                    {
+                        EnemyName = StarterMenu.ENamePicker();
+                        return;
+                    }
 
-        }
+                }
                 }
                 else
                 {
@@ -151,7 +139,6 @@ public class Battle
 
     public bool BattleInventory()
     {
-        Console.WriteLine("");
         return false;
     }
 }

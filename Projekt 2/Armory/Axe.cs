@@ -11,8 +11,4 @@ public class Axe : Weapons
 
     
 
-    public override void HostileAction(EnemyPlayer target)
-    {
-        Console.WriteLine("dEALT DAMAGE to " + target.EnemyHitPoints);
-    }
 }

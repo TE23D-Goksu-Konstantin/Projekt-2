@@ -1,21 +1,21 @@
 public class AxeThrow : Abilities
 {
-    int ATK = 30;
+    int atk = 30;
     int HIT = 70;
 
     public AxeThrow()
     {
-        name = $"Axe Throw: ATK {ATK}, HIT {HIT}%";
+        name = $"Axe Throw: ATK {atk}, HIT {HIT}%";    //Prints out the text, used in Battle when listing all avalible abilities
     }
 
     public override void HostileAction(EnemyPlayer target)
     {        
-        double i = Random.Shared.Next(0,10);
+        double i = Random.Shared.Next(0,11);
 
         if(i <= 7)
         {
-        target.EnemyHitPoints -= ATK;
-                if(EnemyPlayer.Instance.EnemyHitPoints < 0)
+        target.EnemyHitPoints -= atk;
+                if(EnemyPlayer.Instance.EnemyHitPoints < 0)  //Makes it so the enemies health can't be negative
         {
             EnemyPlayer.Instance.EnemyHitPoints = 0;
         }

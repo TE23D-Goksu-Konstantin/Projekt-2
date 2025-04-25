@@ -1,9 +1,9 @@
-﻿// List<Item> inventory = new();
+﻿Battle battle = new Battle();
+battle.StartBattle(); //Begins the battle
+Console.Clear();
 
-// inventory.Add(new Potion());
+string consoleOutput = "The Battle has ended, you've won";
+Utility.writing(consoleOutput);
 
-// string consoleOutput = "";
-// Utility.writing(consoleOutput);
-
-Battle battle = new Battle();
-battle.StartBattle();
+Thread.Sleep(1000);
+Environment.Exit(0);

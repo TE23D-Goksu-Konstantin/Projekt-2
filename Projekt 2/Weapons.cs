@@ -8,7 +8,7 @@ public class Weapons : Item
 
     public List<Abilities> abilities = new();
 
-    public void ListAbilities()
+    public void ListAbilities() 
     {
         if (abilities.Count == 0)
         {
