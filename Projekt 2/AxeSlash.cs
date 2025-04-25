@@ -9,7 +9,7 @@ public class AxeSlash : Abilities
 
     public override void HostileAction(EnemyPlayer target)
     {        
-        double i = Random.Shared.Next(0,10);
+        double i = Random.Shared.Next(0,11);
 
         if(i <= 9)
         {
